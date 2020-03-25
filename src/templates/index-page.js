@@ -5,6 +5,7 @@ import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import ProjectRoll from "../components/ProjectRoll";
 
 export const IndexPageTemplate = ({
                                       image,
@@ -71,24 +72,14 @@ export const IndexPageTemplate = ({
                                         <h3 className="subtitle">{mainpitch.description}</h3>
                                     </div>
                                 </div>
-                                <div className="columns">
-                                    <div className="column is-12">
-                                        <h3 className="has-text-weight-semibold is-size-2">
-                                            {heading}
-                                        </h3>
-                                        <p>{description}</p>
-                                    </div>
-                                </div>
-                                <Features gridItems={intro.blurbs}/>
-
                                 <div className="column is-12">
                                     <h3 className="has-text-weight-semibold is-size-2">
-                                        Latest blog posts
+                                        Latest projects
                                     </h3>
-                                    <BlogRoll/>
+                                    <ProjectRoll/>
                                     <div className="column is-12 has-text-centered">
-                                        <Link className="btn" to="/blog">
-                                            See all blogs
+                                        <Link className="btn" to="/project">
+                                            See all projects
                                         </Link>
                                     </div>
                                 </div>
@@ -172,21 +163,6 @@ export const pageQuery = graphql`
         subheading
         mainpitch {
           title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
           description
         }
       }
