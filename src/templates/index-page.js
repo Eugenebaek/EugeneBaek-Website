@@ -13,8 +13,6 @@ export const IndexPageTemplate = ({
                                       heading,
                                       subheading,
                                       mainpitch,
-                                      description,
-                                      intro,
                                   }) => (
 
     //Banner Section
@@ -49,6 +47,9 @@ export const IndexPageTemplate = ({
                 >
                     {title}
                 </h1>
+                <h2 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
+                    {heading}
+                </h2>
                 <h3 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
                     {subheading}
                 </h3>
@@ -113,10 +114,6 @@ IndexPageTemplate.propTypes = {
     heading: PropTypes.string,
     subheading: PropTypes.string,
     mainpitch: PropTypes.object,
-    description: PropTypes.string,
-    intro: PropTypes.shape({
-        blurbs: PropTypes.array,
-    }),
 }
 
 const IndexPage = ({data}) => {
@@ -130,8 +127,6 @@ const IndexPage = ({data}) => {
                 heading={frontmatter.heading}
                 subheading={frontmatter.subheading}
                 mainpitch={frontmatter.mainpitch}
-                description={frontmatter.description}
-                intro={frontmatter.intro}
             />
         </Layout>
     )
