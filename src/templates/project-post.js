@@ -26,7 +26,7 @@ export const ProjectPostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            <br/>
+            <hr className={'horizontal-rule'}/>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
