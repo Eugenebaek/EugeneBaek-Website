@@ -13,7 +13,6 @@ tags:
   - Sass
   - Bulma
   - React
-  - ''
 ---
 This website was created with the **JAMstack architecture** in mind. 
 
